@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Özel stiller burada */
+        .carousel-item img {
+            max-height: 550px; /* Carousel içindeki resimlerin maksimum yüksekliği */
+            width: 100%; /* Resimlerin genişliği carousel genişliğine göre ayarlanır */
+            object-fit: cover; /* Resimlerin oranlarını korurken kesme işlemi */
+        }
+
+        .customer-card {
+            height: 100%; /* Kartların yüksekliği */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="carouselExample" class="carousel slide w-50 mx-auto" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner" style="height: 50%;">
+            <div class="carousel-item active">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSpDJvPEF2NDyKw5LNA913ei43NqIUH70kESKwAzYX8A&s" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://guzelsanatlarlisesi.com/wp-content/uploads/2023/07/at-cizimi-ornekleri-cizgi-film-renkli-ruya-gibi-guzel-sanatlar-lisesi-1024x1024.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3fV9w2KaR4r4GpjJdmEJwob62e0heDYAkFuazmamGpg&s" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container mt-5 w-100">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card d-flex flex-row align-items-center">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" style="width: 200px;" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor massa id libero consequat, nec dapibus tortor commodo. Nulla facilisi. Donec consectetur magna eget augue tempor, at tempus odio rutrum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <h2>Müşteri Geri Bildirimleri</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri İsmi</h5>
+                        <img src="https://via.placeholder.com/300" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri İsmi</h5>
+                        <p class="card-text">"Buraya müşterinin geri bildirimi yazılabilir."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri İsmi</h5>
+                        <p class="card-text">"Buraya müşterinin geri bildirimi yazılabilir."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

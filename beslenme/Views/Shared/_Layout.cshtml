@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Şeyma Kılınç</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/beslenme.styles.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQkTyRkSxtzKo6d+2Q8FRdpujQ4C2MiR3eBl5KwX5yZk0d9Y1KHx1g4R1qQe+KvX9dRbpD8R/sL8P/Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Uzman Diyetisyen Şeyma Kılınç</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="bio" asp-action="Index">Biyografi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tarifler" asp-action="Index">Tarifler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-area="" asp-controller="Paket" asp-action="Index">Paketler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Iletisim" asp-action="Index">İletişim</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hesap Merkezi
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Nutrition"><i class="fas fa-calculator"></i> VKI HESAPLAMA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="DietPlans"><i class="fas fa-weight"></i> İDEAL KİLO HESAPLAMA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Supplements"><i class="fas fa-ruler-horizontal"></i> BEL KAÇLA ORANI HESAPLAMA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Consultation"><i class="fas fa-heartbeat"></i> BAZAL METABOLİZMA HIZI HESAPLAMA </a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Consultation"><i class="fas fa-heartbeat"></i> DÜZELTİLMİŞ AĞIRLIK HESAPLAMA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Consultation"><i class="fas fa-heartbeat"></i> ENERJİ HESAPLAMA</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Hesap Merkezi" asp-action="Consultation"><i class="fas fa-heartbeat"></i> AKTİVİTE FAKTÖRÜ İLE KALORİ HESAPLAMA HESAPLAMA</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-1">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+  
+  
+</body>
+</html>

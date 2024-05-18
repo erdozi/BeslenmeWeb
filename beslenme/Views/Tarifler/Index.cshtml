@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifler</title>
+    <style>
+        .recipe-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Kartları ortalamak için */
+        }
+
+        .recipe-card {
+            width: 300px;
+            /* height: fit-content; */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+            .recipe-card img {
+                width: 100%;
+                border-radius: 10px;
+                margin-bottom: 5px;
+            }
+
+            .recipe-card h2 {
+                margin-top: 0;
+            }
+
+            .recipe-card p {
+                margin-bottom: 5px;
+            }
+
+            .recipe-card ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                .recipe-card ul li::before {
+                    content: "\2022";
+                    color: #ff7f50;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                    margin-left: -1em;
+                }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="recipe-container">
+
+        <div class="recipe-card">
+            <img src="~/img/diyetBowl.jpg" />
+            <h2>Smoothie Bowl</h2>
+            <p>✨Kırmızı Meyveli Smoothie Bowl🍓🫐✨  Kahvaltı,ara öğün, akşam yemeği her zaman yenebilecek kolay bir aperitif. Siz bowl sever misiniz? “Tüm malzemeleri blend ediyoruz ve hazır:) deneyecek olanlara şimdiden afiyet olsun…”</p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>1 Adet Muz</li>
+                <li>4-5 Adet Çilek</li>
+                <li>5-6 Adet Donmuş Böğürtlen</li>
+                <li>6-7 Adet Donmuş Frambuaz</li>
+                <li>1 Tatlı Kaşaığı Bal</li>
+                <li>1-2 Yemek Kaşığı Yoğurt</li>
+                <li>Keten Tohumu</li>
+                <li>Chia Tohumu</li>
+                <li>Şekersiz Fıstık Ezmesi</li>
+                <li>Yulaf Ezmesi veya Granola</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+
+        <div class="recipe-card">
+            <img src="~/img/DiyetHibiskus.jpg" />
+            <h2>Bergamotlu Hibuskus Çayı</h2>
+            <p>Bergamotlu Yeşilçay,hibiskus, limon,Tarçın ile hazırlanan,  Yaz aylarında serinletici, metabolizma hızlandıran, yağ yakımına yardımcı, Ödem atıcı,bağışıklık güçlendiren, güçlü antioksidan kaynaklarının bir arada olduğu muhteşem içecekle geldim🎉🥳  Tarif: yeşilçay ve hibiskusu demliyoruz. Soğumaya bırakıyoruz ardından içerisine su, buz, limon , tarçın kabuğu ilave ediyoruz. Tercihen nane de çok yakışacaktır. Afiyet olsun </p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>Bergamotlu Yeşilçay</li>
+                <li>Hibskus</li>
+                <li>Limon</li>
+                <li>Tarçın Çubuğu</li>
+                <li>Nane</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+
+        <div class="recipe-card">
+            <img src="~/img/diyetKurabiye.jpg" />
+
+            <h2>Fit Kurabiye</h2>
+            <p>Enfes bir kurabiye tarifiyle geldimmm ❤  Aşırı sağlıklı ve lezzetli bir tat 😋 ara öğünlerinizde, kahvenizin yanına çok yakışacağından eminim hemen tarife geçelim💓 🍪TARİF : yumurta akını güzelce çırpıyorsunuz, içerisine ezilmiş muzu ve fıstık ezmesi  ilave ediyoruz karıştırıyoruz daha sonra küçük küçük kestiğimiz kumkuatları, kuru kayısıları, fındıkları ve diğer malzemeleri ilave ediyoruz.  Daha sonra bütün malzemeleri karıştırıp elimizle ceviz büyüklüğünde şekil vererek fırında 180 derece 12-15 dk kadar pişiriyoruz. AFİYET OLSUN </p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>1 Su bardağı Yulaf</li>
+                <li>Ceviz</li>
+                <li>Fındık</li>
+                <li>Kumkuat</li>
+                <li>5+ adet Kuru Kayısı</li>
+                <li>Kuru Üzüm</li>
+                <li>Küçük Boy Muz</li>
+                <li>Bal yada Pekmez</li>
+                <li>Yumurta Akı</li>
+                <li>Susam&çörek otu</li>
+                <li>İsteğe bağlı olarak yarım kabartma tozu ve hindistan cevizi baharatı</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+        <div class="recipe-card">
+            <img src="~/img/diyetZuber.jpg" />
+
+            <h2>Ev Yapımı Züber</h2>
+            <p>🌼 - Yulafımızı blend ediyoruz .ceviz ve çikolata hariç bütün malzemelerimizi kabımıza koyup harmanlıyoruz/ yoğuruyoruz .Daha sonra çikolata parçacıklarını ilave edip harmanladıktan sonra buzdolabında 5-10 dakika dinlendiriyoruz bu sırada cevizlerimizi biraz iri olucak şekilde blend ediyoruz.   Daha sonra buzdolabından çıkartıp birer parça alıp elimizde yuvarlayıp cevize buluyoruz. Tamamını bu şekilde yapıp bitirince buzdolabında tekrar dinlendiriyoruz daha sonrasında afiyetle yiyebilirsiniz ❤</p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>1 çay bardağı yulaf</li>
+                <li>10 parça kadar hurma ezmesi (11-12 tane hurmayı suda bekleterek de yapabilirsiniz ) </li>
+                <li>Yarım çay bardağından bi tık fazla süt </li>
+                <li>1 yemek kaşığı hindistan cevizi tozu </li>
+                <li>1 yemek kaşığı kakao</li>
+                <li>1 yemek kaşığı damla bitter çikolata </li>
+                <li>Ceviz</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+        <div class="recipe-card">
+            <img src="~/img/diyetTost.jpg" />
+
+            <h2>Yulaf Tost</h2>
+            <p>Ekmeksiz tost olur mu demeyinn.  Yulaftan Harika bir tarif ile tost yapabilirsiniz 😋😋 Denemenizi tavsiye ederim ..hem besleyici hem tok tutucu hem de sağlıklı 😍😍😍 bütün malzemeleri ( iç malzemeler hariç ) tabakta karıştırıyoruz. Daha sonra tost makinesine yağlı kağıt seriyoruz karışımımızı döküyoruz ve yayıyoruz. Üzerine dilerseniz tekrar yağlı kağıt yerleştirebilirsiniz. Tost Makinesinin kapağını ilk başta çok bastırmayalım ki dağılma olmasın 🥰  Piştiğini hissetiğinizde içerisine kaşar peyniri, domates veya isteğe bağlı beyaz peynir koyup ikiye katlayarak tekrar kapağı kapatıyoruz . Daha sonra afiyetle yiyebilirsiniz ❤</p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>3-4 yemek kaşığı yulaf </li>
+                <li>1 yumurta</li>
+                <li>1 kaşık yoğurt</li>
+                <li>Tuz</li>
+                <li>--İÇ MALZEME--</li>
+                <li>Kaşar peyniri veya Beyaz peynir</li>
+                <li>Domates</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+        <div class="recipe-card">
+            <img src="~/img/diyetPuding.jpg" />
+            <h2>Doğal Diyet Puding 🍫</h2>
+            <p>Bütün malzemeleri blend ediyoruz, üzerine hindistan cevizi baharatı ile servis ederek tüketebilirsiniz. Afiyet olsun. 🤩2 ara öğüne bölerek tüketebilirsiniz.</p>
+            <h3>İçindekiler:</h3>
+            <ul>
+                <li>2 Küçük cennet hurması </li>
+                <li>1 Muz</li>
+                <li>Kakao</li>
+                <li>1 Kaşık süt</li>
+                <!-- İçindekiler listesini istediğiniz kadar uzatabilirsiniz -->
+            </ul>
+        </div>
+        <!-- Birden fazla tarif kartı ekleyebilirsiniz -->
+
+    </div>
+
+</body>
+</html>
