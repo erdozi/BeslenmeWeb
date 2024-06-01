@@ -1,9 +1,22 @@
+using beslenme.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(); // Session hizmetini ekle
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddDbContext<uContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
+});
+
+
 var app = builder.Build();
+app.UseSession(); // Session'ý kullan
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -13,6 +26,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -20,8 +34,16 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "area",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+        );
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();

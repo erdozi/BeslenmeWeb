@@ -1,0 +1,53 @@
+﻿@model beslenme.DTOs.RegisterDTO
+
+<div class="container">
+    <h1 class="display-4 text-center">Kullanıcı Kayıt Paneli</h1>
+    <hr />
+
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/temp/dist/userLogin.css" rel="stylesheet" />
+    <link href="~/temp/dist/style.css" rel="stylesheet" />
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Register" method="post">
+                <div class="form-group">
+                    <input type="text" asp-for="kullaniciAd" class="form-control form-control-lg" placeholder="Lütfen Kullanıcı Adınızı Giriniz...">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" asp-for="sifre" class="form-control form-control-lg" placeholder="Lütfen Şifrenizi Giriniz...">
+                </div>
+
+             
+
+                <div class="form-group">
+                    <input type="number" asp-for="boy" class="form-control form-control-lg" placeholder="Lütfen Boyunuzu Giriniz (cm)...">
+                </div>
+
+                <div class="form-group">
+                    <select asp-for="cinsiyet" class="form-control form-control-lg">
+                        <option value="">Cinsiyet Seçiniz</option>
+                        <option value="Erkek">Erkek</option>
+                        <option value="Kadın">Kadın</option>
+                        <option value="Diğer">Diğer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" asp-for="kilo" class="form-control form-control-lg" placeholder="Lütfen Kilonuzu Giriniz (kg)...">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" asp-for="yas" class="form-control form-control-lg" placeholder="Lütfen Yaşınızı Giriniz...">
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success btn-lg">Kayıt Ol</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

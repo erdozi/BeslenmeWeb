@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "VKİ Hesaplama";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Vki" method="post">
+    <div class="form-group">
+        <label for="boy">Boy (metre):</label>
+        <input type="number" step="0.01" class="form-control" id="boy" name="boy" value="@ViewBag.Boy" required />
+    </div>
+    <div class="form-group">
+        <label for="kilo">Kilo (kg):</label>
+        <input type="number" class="form-control" id="kilo" name="kilo" value="@ViewBag.Kilo" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Hesapla</button>
+</form>
+
+@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success mt-3">
+        @ViewBag.Sonuc
+    </div>
+}

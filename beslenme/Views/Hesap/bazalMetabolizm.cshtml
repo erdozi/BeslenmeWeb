@@ -1,0 +1,30 @@
+﻿@model beslenme.DTOs.bazalMetabolizmaHiziDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>bazalMetabolizmaHizi</title>
+</head>
+<body>
+    <h2>Bazal Metabolizma Hızı Hesaplama</h2>
+
+    <form asp-action="bazalMetabolizmaHizi" method="post">
+        <div>
+            <label for="bel">Bel (cm):</label>
+            <input asp-for="boy" class="form-control" type="number" />
+        </div>
+        <div>
+            <label for="kalca">Kalca (cm):</label>
+            <input asp-for="yas" class="form-control" type="number" />
+        </div>
+        <button type="submit">Hesapla</button>
+    </form>
+
+
+    <div>
+        <h3>Bel/Kalça Oranınız: @ViewBag.Sonuc</h3>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿@model List<Sepet>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sepetim - Şeyma Kılınç</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Sepetim</h1>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ürün Adı</th>
+                            <th>Açıklama</th>
+                            <th>Adet</th>
+                            <th>Fiyat</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ad</td>
+                                <td>@item.aciklama</td>
+                                <td>@item.adet</td>
+                                <td>@item.fiyat?.ToString("C")</td>
+                                <td>
+                                    <form asp-area="Member" asp-controller="Sepet" asp-action="SepettenSil" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@item.id" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Sepet Özeti
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Toplam Tutar:</strong> @Model.Sum(item => item.fiyat)?.ToString("C")</p>
+                        <form asp-area="Member" asp-controller="Sepet" asp-action="Onayla" method="post">
+                            <button type="submit" class="btn btn-success btn-block">Sepeti Onayla</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

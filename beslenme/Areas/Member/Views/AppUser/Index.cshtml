@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Hoşgeldiniz";
+    var userName = ViewBag.UserName ?? "Misafir";
+    var userHeight = ViewBag.Height ?? "N/A";
+    var userWeight = ViewBag.Weight ?? "N/A";
+    var userGender = ViewBag.Gender ?? "N/A";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .welcome-container {
+            text-align: center;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+            .welcome-container h1 {
+                margin: 0;
+                font-size: 3em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .welcome-container p {
+                margin-top: 10px;
+                font-size: 1.5em;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Hoşgeldiniz, @userName!</h1>
+        <p>Boy: @userHeight cm</p>
+        <p>Kilo: @userWeight kg</p>
+        <p>Cinsiyet: @userGender</p>
+    </div>
+</body>
+</html>

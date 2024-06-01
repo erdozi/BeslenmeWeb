@@ -1,0 +1,30 @@
+﻿@model beslenme.DTOs.VkiDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vki</title>
+</head>
+<body>
+    <h2>Vücut Kitle İndeksi (VKİ) Hesaplama</h2>
+
+    <form asp-action="Vki" method="post">
+        <div>
+            <label for="boy">Boy (cm):</label>
+            <input asp-for="boy" class="form-control" type="number" />
+        </div>
+        <div>
+            <label for="kilo">Kilo (kg):</label>
+            <input asp-for="kg" class="form-control" type="number" />
+        </div>
+        <button type="submit">Hesapla</button>
+    </form>
+
+ 
+        <div>
+            <h3>Vücut Kitle İndeksi (VKİ): @ViewBag.Sonuc</h3>
+        </div>
+    
+</body>
+</html>

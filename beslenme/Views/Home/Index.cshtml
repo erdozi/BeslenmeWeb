@@ -12,13 +12,17 @@
     <style>
         /* Özel stiller burada */
         .carousel-item img {
-            max-height: 550px; /* Carousel içindeki resimlerin maksimum yüksekliği */
+            max-height: 650px; /* Carousel içindeki resimlerin maksimum yüksekliği */
             width: 100%; /* Resimlerin genişliği carousel genişliğine göre ayarlanır */
             object-fit: cover; /* Resimlerin oranlarını korurken kesme işlemi */
         }
 
         .customer-card {
             height: 100%; /* Kartların yüksekliği */
+        }
+
+        body {
+            background-color: #f0f0f0; /* Gri */
         }
     </style>
 </head>
@@ -27,13 +31,10 @@
     <div id="carouselExample" class="carousel slide w-50 mx-auto" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner" style="height: 50%;">
             <div class="carousel-item active">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSpDJvPEF2NDyKw5LNA913ei43NqIUH70kESKwAzYX8A&s" class="d-block w-100" alt="...">
+                <img src="~/img/geçiş1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://guzelsanatlarlisesi.com/wp-content/uploads/2023/07/at-cizimi-ornekleri-cizgi-film-renkli-ruya-gibi-guzel-sanatlar-lisesi-1024x1024.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3fV9w2KaR4r4GpjJdmEJwob62e0heDYAkFuazmamGpg&s" class="d-block w-100" alt="...">
+                <img src="~/img/geçiş2.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -46,12 +47,14 @@
         </button>
     </div>
     <div class="container mt-5 w-100">
+        <h2 style="text-transform: uppercase;">NEDEN UZM. DYT. ŞEYMA KILINÇ?</h2>
         <div class="row">
             <div class="col-md-12">
-                <div class="card d-flex flex-row align-items-center">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" style="width: 200px;" alt="...">
+                <div class="card d-flex flex-row align-items-center" style="background-color: #307071;">
+                    <!-- #ADD8E6 Light Blue -->
+                    <img src="~/img/diyet6.jpg" class="card-img-top" style="width: 200px;" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor massa id libero consequat, nec dapibus tortor commodo. Nulla facilisi. Donec consectetur magna eget augue tempor, at tempus odio rutrum.</p>
+                        <p class="card-text" style="font-weight: bold;">SAĞLIKLI YAŞAMA BİLİNCİNİ HAYATINIZA SÜRDÜREBİLİR ŞEKİLDE ÖĞRETEN, İLETİŞİM VE MOTİVASYON DESTEĞİ İLE SAĞLIKLI BESLENMENİZE TEŞVİK EDEN, DİYETİ DİYET GÖZÜYLE DEĞİL YAŞAM TARZINA SEVDİREREK ENTEGRE EDEN, ZOR ZAMANLARINIZDA, UMUTSUZLUĞA KAPILDIĞINIZDA YAŞAM KOÇLUĞU İLE SİZLERE AYRICA DESTEKTE BULUNAN, SİZLERE HER KOŞULDA GÜVENEN BİR DİYETİSYEN DESTEĞİ ALMAK İSTİYORSANIZ, KORKARAK DEĞİL SEVEREK SAĞLIKLI YAŞAMA VE ZAYIFLAMAYA ADIM ATMAK İSTİYORSANIZ UZMAN DİYETİSYEN ŞEYMA KILINÇ’TAN DANIŞMANLIK HİZMETİ ALABİLİRSİNİZ.</p>
                     </div>
                 </div>
             </div>
@@ -60,30 +63,57 @@
 
 
 
-    <div class="container mt-5">
+
+
+
+    <div class="container mt-3">
         <h2>Müşteri Geri Bildirimleri</h2>
         <div class="row mt-4">
             <div class="col-md-4">
                 <div class="card customer-card">
                     <div class="card-body">
-                        <h5 class="card-title">Müşteri İsmi</h5>
-                        <img src="https://via.placeholder.com/300" class="card-img-top" style="width: 200px;" alt="...">
+                        <h5 class="card-title">Müşteri 1</h5>
+                        <img src="~/img/diyettartı1.jpg" class="card-img-top" style="width: 200px;" alt="...">
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card customer-card">
                     <div class="card-body">
-                        <h5 class="card-title">Müşteri İsmi</h5>
-                        <p class="card-text">"Buraya müşterinin geri bildirimi yazılabilir."</p>
+                        <h5 class="card-title">Müşteri 2</h5>
+                        <img src="~/img/diyettartı2.jpg" class="card-img-top" style="width: 200px;" alt="...">
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card customer-card">
                     <div class="card-body">
-                        <h5 class="card-title">Müşteri İsmi</h5>
-                        <p class="card-text">"Buraya müşterinin geri bildirimi yazılabilir."</p>
+                        <h5 class="card-title">Müşteri 3</h5>
+                        <img src="~/img/diyettartı3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri 4</h5>
+                        <img src="~/img/diyettartı4.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri 5</h5>
+                        <img src="~/img/diyettartı5.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card customer-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Müşteri 6</h5>
+                        <img src="~/img/diyettartı6.jpg" class="card-img-top" style="width: 200px;" alt="...">
                     </div>
                 </div>
             </div>

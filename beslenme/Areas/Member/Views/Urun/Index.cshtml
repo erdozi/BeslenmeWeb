@@ -1,0 +1,154 @@
+﻿@model List<Urun>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ürünler - Şeyma Kılınç</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        .input-group-prepend button, .input-group-append button {
+            border: none;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .input-group .form-control {
+            border: 2px solid #ced4da;
+            border-radius: 50px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+            .input-group .form-control:focus {
+                box-shadow: none;
+            }
+
+        .input-group-prepend, .input-group-append {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .card-body form {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            width: 100%;
+        }
+
+        .card {
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            width: 150px;
+        }
+
+        .btn-outline-secondary {
+            border: 2px solid #ced4da;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .btn-outline-secondary:focus, .btn-outline-secondary:hover {
+                background-color: #f8f9fa;
+            }
+
+        .input-group-prepend, .input-group-append {
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Ürünler</h1>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.ad</h5>
+                            <p class="card-text">@item.aciklama</p>
+                            <p class="card-text"><strong>Fiyat: </strong>@item.fiyat?.ToString("C")</p>
+                            <form asp-area="Member" asp-controller="Urun" asp-action="SepeteEkle" method="post">
+                                <input type="hidden" name="id" value="@item.id" />
+                                <div class="form-group">
+                                    <label for="adet" class="mr-2">Adet:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-outline-secondary" onclick="decrement('adet-@item.id')">-</button>
+                                        </div>
+                                        <input type="number" id="adet-@item.id" name="adet" class="form-control" min="1" value="1" readonly />
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-secondary" onclick="increment('adet-@item.id')">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sepete Ekle</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function increment(id) {
+            var input = document.getElementById(id);
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            input.value = value;
+        }
+
+        function decrement(id) {
+            var input = document.getElementById(id);
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value--;
+            value = value < 1 ? 1 : value;
+            input.value = value;
+        }
+    </script>
+</body>
+</html>

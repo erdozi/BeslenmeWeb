@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Bel/Kalça Oranı Hesaplama";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="BelKalcaOraniHesaplama" method="post">
+    <div class="form-group">
+        <label for="bel">Bel (cm):</label>
+        <input type="number" class="form-control" id="bel" name="bel" required />
+    </div>
+    <div class="form-group">
+        <label for="kalca">Kalça (cm):</label>
+        <input type="number" class="form-control" id="kalca" name="kalca" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Hesapla</button>
+</form>
+
+@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success mt-3">
+        @ViewBag.Sonuc
+    </div>
+}
